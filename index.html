@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&family=Overpass:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -450,47 +451,63 @@
         </div>
     </section>
 
-    <section>
-        <div class="container">
+    <!-- Ranking Section -->
+    <section class="ranking-section">
+        <div class="container p__tb">
 
-            <!-- Ranking Section -->
-            <div class="section ranking">
-                <h2>Classement</h2>
+            <div class="ranking">
+                <h1>Classement</h1>
+
                 <div class="teams">
-                    <div class="team">
-                        <img src="team1.png" alt="Team 1">
-                        <span>1 FUS</span>
+                    <div class="bracket"></div>
+
+                    <div class="team-wrapper">
+                        <div class="team">
+                            <span>1</span>
+                            <div class="dot"></div>
+                            <img src="./Assets/pngwing 19.png" alt="Team 1">
+                            <p>FUS</p>
+                        </div>
+                        <div class="team">
+                            <span>2</span>
+                            <div class="dot"><i class="fa-solid fa-chevron-left"></i></div>
+                            <img src="./Assets/pngwing 6.png" alt="Team 2">
+                            <p>WAC</p>
+                        </div>
+                        <div class="team">
+                            <span>3</span>
+                            <div class="dot"><i class="fa-solid fa-chevron-left"></i></div>
+                            <img src="./Assets/pngwing 2.png" alt="Team 3">
+                            <p>RAJA</p>
+                        </div>
+                        <div class="team">
+                            <span>4</span>
+                            <div class="dot"><i class="fa-solid fa-chevron-left"></i></div>
+                            <img src="./Assets/pngwing 2 (1).png" alt="Team 4">
+                            <p>WAC</p>
+                        </div>
+                        <div class="team">
+                            <span>5</span>
+                            <div class="dot"><i class="fa-solid fa-chevron-left"></i></div>
+                            <img src="./Assets/pngwing 6.png" alt="Team 5">
+                            <p>WAC</p>
+                        </div>
+                        <div class="team">
+                            <span>6</span>
+                            <div class="dot"><i class="fa-solid fa-chevron-left"></i></div>
+                            <img src="./Assets/pngwing 26.png" alt="Team 6">
+                            <p>OCK</p>
+                        </div>
+                        <div class="team">
+                            <span>7</span>
+                            <div class="dot"><i class="fa-solid fa-chevron-left"></i></div>
+                            <img src="./Assets/pngwing 27.png" alt="Team 7">
+                            <p>JSS</p>
+                        </div>
                     </div>
-                    <div class="team">
-                        <img src="team2.png" alt="Team 2">
-                        <span>2 WAC</span>
-                    </div>
-                    <div class="team">
-                        <img src="team3.png" alt="Team 3">
-                        <span>3 RAJA</span>
-                    </div>
-                    <div class="team">
-                        <img src="team4.png" alt="Team 4">
-                        <span>4 WAC</span>
-                    </div>
-                    <div class="team">
-                        <img src="team5.png" alt="Team 5">
-                        <span>5 WAC</span>
-                    </div>
-                    <div class="team">
-                        <img src="team6.png" alt="Team 6">
-                        <span>6 OCK</span>
-                    </div>
-                    <div class="team">
-                        <img src="team7.png" alt="Team 7">
-                        <span>7 JSS</span>
-                    </div>
+                    <div class="bracket"></div>
                 </div>
-                <!-- <div class="progress-bar">
-                    <div></div>
-                    <div class="inactive"></div>
-                    <div class="inactive"></div>
-                </div> -->
+
                 <div class="extra">Lorem Ipsum Dolor</div>
             </div>
 
@@ -534,9 +551,31 @@
 
     </section>
 
+    <section class="partners">
+        <div class="container p__tb">
+            <div class="partners-title">PARTENAIRES</div>
+            <div class="logo-grid-wrapper">
+                <div class="logos-grid">
+                    <img src="./Assets/OCP.png" alt="OCP">
+                    <img src="./Assets/AFRIQUIA.png" alt="Afriquia">
+                    <img src="./Assets/Inwi.png" alt="Inwi">
+                    <img src="./Assets/SIDI-ALI-2 1.png" alt="Sidi Ali">
+                    <img src="./Assets/CDG.png" alt="CDG">
+                    <img src="./Assets/MDJS.png" alt="MDJS">
+                    <img src="./Assets/WAVE.png" alt="Wave">
+                    <img src="./Assets/GO SPORT.png" alt="GO Sport">
+                    <img src="./Assets/Puma.png" alt="Puma">
+                    <img src="./Assets/Coca-Cola_logo 1.png" alt="Coca Cola">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
     <section class="newsletter">
 
-        <div class="container p__t">
+        <div class="container p__tb">
 
             <div class="overlay-wrapper">
 

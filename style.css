@@ -211,7 +211,6 @@ textarea {
 }
 
 body {
-  margin: 0;
   background-color: #0A1E3D;
 }
 
@@ -1147,7 +1146,6 @@ h6 {
 .match-week {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(180deg, #F0F1F3 0%, #FCFCFC 100%);
 }
 
 .match-week h1 {
@@ -1158,7 +1156,7 @@ h6 {
   font-style: normal;
   font-weight: 500;
   font-size: 46px;
-  line-height: 103%;
+  text-align: center;
   letter-spacing: 6px;
   text-transform: uppercase;
   z-index: 1;
@@ -1686,14 +1684,59 @@ h6 {
 
 /* Ranking Section */
 
-.ranking {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1a2945;
-  padding: 15px;
-  border-radius: 8px;
+.ranking-section {
+  background: linear-gradient(75.19deg, #00284F -51.31%, #051625 106.25%);
 }
+
+.ranking h1 {
+  position: relative;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  font-size: 46px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.ranking h1::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 20px;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) skewX(-15deg);
+  background: #75D069;
+  z-index: -1;
+}
+
+
+
+.bracket {
+
+  width: 20px;
+  height: 100px;
+  position: relative;
+  background-color: transparent;
+  border-top: 1px solid #00ff00;
+  border-bottom: 1px solid #00ff00;
+  border-left: 1px solid #00ff00;
+}
+
+
+
+.bracket:last-child {
+  border-left: 0;
+  border-right: 1px solid #00ff00;
+  box-shadow: none;
+}
+
+
+
 
 .ranking .teams {
   display: flex;
@@ -1701,27 +1744,73 @@ h6 {
   gap: 10px;
 }
 
+
+.team-wrapper {
+  display: flex;
+  gap: 16px;
+
+}
+
 .team {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: #1f3456;
-  padding: 10px;
-  border-radius: 8px;
-  width: 60px;
+  background: #152F45;
+  padding: 12px;
+  border-radius: 4px;
+  gap: 12px;
   text-align: center;
 }
 
-.team img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 5px;
+.team span {
+  background: #061626;
+  color: #FFFFFF;
+  height: 100%;
+  margin-left: -12px;
+  padding: 4px 12px;
+  align-self: center;
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+
+
 }
 
-.team span {
-  font-size: 0.9rem;
-  color: #c0c0c0;
+
+.teams .team:first-child .dot {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
 }
+
+
+
+.teams .team .dot {
+  color: #75D069;
+  margin-left: -4px;
+}
+
+.team p {
+  color: #FFFFFF;
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  align-items: center;
+
+}
+
+
+
+.team img {
+  border: 8px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  max-height: 40px;
+}
+
 
 .ranking .extra {
   color: red;
@@ -1805,8 +1894,71 @@ h6 {
 }
 
 
+/*  Partners Section */
 
-/*Newsletter Section*/
+.partners {
+  background: #F7F7F7;
+  text-align: center;
+}
+
+.partners-title {
+  position: relative;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 46px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #111C3B;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.partners-title::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 20px;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) skewX(-15deg);
+  background: #75D069;
+  z-index: -1;
+}
+
+.logo-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+}
+
+.logos-grid img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  /* Optional: grayscale effect */
+  transition: filter 0.3s ease;
+}
+
+.logos-grid img:hover {
+  filter: grayscale(0%);
+  /* Optional: color on hover */
+}
+
+
+/* Newsletter Section */
 
 
 .newsletter {
@@ -1815,7 +1967,6 @@ h6 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 44px;
   z-index: -5;
 
 }
@@ -1834,13 +1985,11 @@ h6 {
 }
 
 
-/* .overlay-wrapper {
-  
-  background-size: cover;
-  padding: 50px;
-  text-align: left;
-  position: relative;
-} */
+.overlay-wrapper {
+  width: 100%;
+  padding-inline: 136px;
+
+}
 
 
 .overlay-items {
@@ -1858,6 +2007,21 @@ h6 {
   text-transform: uppercase;
   /* border-right: 2px solid #75D069; */
 
+}
+
+.overlay-item-left::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(270deg, #75D069 0%, rgba(117, 208, 105, 0) 80.21%);
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  transform: rotate(-180deg);
+  clip-path: polygon(100% 90%, 0% 96%, 0% 0%, 100% 0%);
+  z-index: -1;
 }
 
 .overlay-item-right {
@@ -1905,7 +2069,7 @@ h6 {
 
 
 
-/*footer*/
+/* footer */
 
 footer {
   background: linear-gradient(90deg, #00284F 7.24%, #051625 94.15%);
