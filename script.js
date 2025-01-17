@@ -1,4 +1,4 @@
-$('.owl-carousel').owlCarousel({
+$('.match-schedule').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
@@ -20,6 +20,27 @@ $('.owl-carousel').owlCarousel({
         },
         1200: {
             items: 5
+        }
+    }
+})
+
+$('.team-wrapper').owlCarousel({
+    margin: 16,
+    nav: false,
+    dots: true,
+    slideTransition: 'linear',
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 3
+        },
+        1000: {
+            items: 5
+        },
+        1200: {
+            items: 7
         }
     }
 })
