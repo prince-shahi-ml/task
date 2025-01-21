@@ -228,7 +228,6 @@ h6 {
   max-width: 1308px;
   padding-inline: 24px;
   margin: 0 auto;
-  /* padding: 40px; */
 }
 
 .m__tb {
@@ -261,16 +260,19 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-inline: 24px; */
   padding-block: 16px;
   background-color: #0A1E3D;
   border-bottom: 2px solid rgba(255, 255, 255, 0.19);
+  position: relative;
+  /* Needed for absolute positioning of hamburger menu */
+  z-index: 10;
 }
 
 .logo {
-  color: #5BF575;
   font-size: 24px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .logo span {
@@ -284,9 +286,14 @@ h6 {
 }
 
 .nav a {
-  color: #fff;
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: var(--normal-text);
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .cta-button {
@@ -299,8 +306,126 @@ h6 {
   text-decoration: none;
 }
 
+.nav-toggle {
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.nav-responsive {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #0A1E3D;
+  padding: 16px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+}
+
+.nav-responsive a {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.nav.show {
+  display: flex;
+}
+
+.nav-responsive {
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #0A1E3D;
+  /* Matches header background */
+  padding: 16px;
+  position: absolute;
+  /* Position it below the header */
+  top: 100%;
+  /* Align just below the header */
+  right: 0;
+  width: 100%;
+  /* Full-width on smaller screens */
+  z-index: 1000;
+  /* Ensure it's on top */
+}
+
+.nav-responsive.show {
+  display: flex;
+  /* Becomes visible when `show` is added */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    /* Hide default nav */
+  }
+
+
+  .nav-toggle {
+    display: flex;
+    /* Show hamburger menu */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .cta-button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .nav-responsive a {
+    font-size: 16px;
+  }
+}
+
+
+/* Hero Section */
+
+
 .hero {
   overflow-x: clip;
+  position: relative;
+}
+
+.hero::after {
+  position: absolute;
+  top: 40%;
+  right: 64%;
+  content: '';
+  height: 100%;
+  width: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(239, 1, 7, 0.14) 0%, rgba(239, 1, 7, 0) 100%);
+  z-index: -1;
+
+
 }
 
 .hero-container {
@@ -310,7 +435,6 @@ h6 {
 
 .hero-left {
   position: relative;
-  /* padding: 40px 20px; */
   text-align: left;
   width: 50%;
 }
@@ -399,6 +523,7 @@ h6 {
 
 .subtract {
   position: absolute;
+  left: -10%;
 
 }
 
@@ -440,11 +565,22 @@ h6 {
 }
 
 .stats-container {
+  background: #0F2A42;
+  opacity: 0.8;
+  border-radius: 4px;
   max-width: 420px;
 }
 
+
+
 .stats-container .stats-heading p {
   text-align: center;
+  color: #FFFFFF;
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  padding-block: 14px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.19);
 }
 
@@ -462,25 +598,31 @@ h6 {
   width: 50%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  padding-inline: 12px;
+  gap: 24px;
 }
 
 .stats-right .stats-item img {
-  width: 100px;
+  width: 100%;
   margin-left: 12px;
 }
 
 .stats-right .cards img {
-  width: 50%;
+  width: 68%;
 }
 
 .stats-container .stats-name {
-  color: white;
+  color: #FFFFFF;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 10px;
-  font-size: 24px;
+  padding-block: 14px;
+  padding-right: 24px;
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .stats-container .stats-name i {
@@ -529,14 +671,11 @@ h6 {
 }
 
 .left-half-clipper {
-  /* a round circle */
   border-radius: 50%;
   width: 5em;
   height: 5em;
   position: absolute;
-  /* needed for clipping */
   clip: rect(0, 5em, 5em, 2.5em);
-  /* clips the whole left half*/
 }
 
 /* when p>50, don't clip left half*/
@@ -989,25 +1128,20 @@ h6 {
 
 /* Tablet styles */
 @media (max-width: 1024px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-  }
-
-  .nav {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
 
   .hero-container {
     flex-direction: column;
     text-align: center;
   }
 
+  .hero-image-main {
+    margin-top: -60px;
+  }
+
   .hero-left,
   .hero-right {
     width: 100%;
+    padding: 84px 16px 0px 16px;
   }
 
   .hero-left h1 {
@@ -1039,19 +1173,6 @@ h6 {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .header {
-    padding: 12px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .nav {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-  }
 
   .cta-button {
     padding: 8px 20px;
@@ -1062,19 +1183,44 @@ h6 {
     font-size: clamp(16px, 4vw, 28px);
   }
 
+  .number {
+    top: 90px;
+    right: 390px;
+  }
+
+  .number h2 {
+    font-size: 104px;
+    letter-spacing: 12px;
+  }
+
+  .number::after {
+    width: 90px;
+    height: 24px;
+  }
+
   .hero-left h1 span {
     font-size: clamp(20px, 5vw, 40px);
   }
 
   .hero-image-main img {
-    max-width: 300px;
+    max-width: 400px;
   }
 
   .hero-image-back {
-    top: -50px;
-    right: -100px;
-    max-width: 300px;
+    top: 30px;
+    right: -20px;
+    max-width: 404px;
   }
+
+  .subtract {
+    left: 0%;
+  }
+
+  .subtract img {
+    height: 190px;
+  }
+
+
 
   .stats-container {
     padding: 0 10px;
@@ -1088,24 +1234,55 @@ h6 {
 
 /* Small mobile screens */
 @media (max-width: 480px) {
-  .header {
-    padding: 8px;
-  }
-
-  .logo {
-    font-size: 18px;
-  }
 
   .nav {
     gap: 10px;
   }
 
+  .p__t{
+    padding-top: 0;
+  }
+
+  .hero-image-main img {
+    max-width: 300px;
+  }
+
+  .hero-image-back {
+    top: 40px;
+    right: -80px;
+    max-width: 242px;
+  }
+
+  .subtract {
+    left: -20%;
+  }
+
+  .subtract img {
+    height: 240px;
+  }
+
   .hero-left h1 {
-    font-size: clamp(14px, 4vw, 24px);
+    font-size: clamp(40px, 4vw, 24px);
   }
 
   .hero-left h1 span {
     font-size: clamp(18px, 5vw, 32px);
+  }
+
+  .number {
+
+    top: 134px;
+    right: 150px;
+  }
+
+  .number::after {
+    width: 44px;
+    height: 12px;
+  }
+
+  .number h2 {
+    font-size: 60px;
+    letter-spacing: 8px;
   }
 
   .hero-left p {
@@ -1132,7 +1309,6 @@ h6 {
     height: 2.5em;
   }
 }
-
 
 
 
@@ -1725,6 +1901,7 @@ h6 {
   border-top: 1px solid #00ff00;
   border-bottom: 1px solid #00ff00;
   border-left: 1px solid #00ff00;
+  margin-bottom: 28px;
 }
 
 
@@ -1786,6 +1963,15 @@ h6 {
   margin-left: -4px;
 }
 
+.owl-theme .owl-dots .owl-dot.active span {
+  background: #75D069;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 54px;
+  height: 2px;
+}
+
 
 .team-wrapper .team .dot {
   color: #75D069;
@@ -1837,17 +2023,32 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-top: 104px;
+  margin-bottom: 54px;
 }
 
 .stats-player span {
+  position: relative;
   color: #FFFFFF;
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 500;
   font-size: 46px;
-  align-items: center;
   letter-spacing: 6px;
   text-transform: uppercase;
+  z-index: 1;
+}
+
+.stats-player span::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 20px;
+  bottom: 2px;
+  left: 8%;
+  transform: translateX(-50%) skewX(-15deg);
+  background: #75D069;
+  z-index: -1;
 }
 
 .section-stats-container {
@@ -1982,12 +2183,31 @@ h6 {
   background: #061627;
   border: 2px solid rgba(42, 68, 93, 0.11);
   box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.07);
-  border-radius: 0px 0px 7px 7px
+  border-radius: 0px 0px 7px 7px;
+  position: relative;
+  z-index: 1;
+}
+
+.stats-club-card::after {
+  position: absolute;
+  background: linear-gradient(90.02deg, #75D069 0%, #75D069 101.76%);
+  content: "";
+  height: 2px;
+  width: 100%;
+  bottom: 100%;
+  left: 0%;
+  z-index: -1;
+
 }
 
 .stats-club-name {
   display: flex;
-  justify-content: space-around;
+  gap: 16px;
+  padding: 54px 44px 50px 24px;
+}
+
+.stats-club-name-right .name {
+  padding-top: 12px;
 }
 
 .stats-club-name-right p {
@@ -1998,6 +2218,7 @@ h6 {
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .stats-club-name-right .name p {
@@ -2022,6 +2243,8 @@ h6 {
   background: rgba(255, 255, 255, 0.06);
   border: 0.4px solid rgba(13, 29, 47, 0.76);
   border-radius: 3px;
+  padding: 12px;
+  margin: 0 8px 0 8px;
 }
 
 .stats-num-wrapper {
@@ -2029,9 +2252,18 @@ h6 {
   justify-content: space-between;
 }
 
+.stats-num-wrapper .stats-num-left {
+  padding: 0 12px 24px 0;
+}
+
+.stats-num-wrapper .stats-num-right {
+  padding-left: 12px;
+}
+
 .stats-num-wrapper .stats-num-item {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 
 .stats-num-wrapper .stats-num-item p {
@@ -2039,8 +2271,9 @@ h6 {
   font-family: 'Overpass';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .stats-num-wrapper .stats-num-item p:first-child {
@@ -2049,6 +2282,7 @@ h6 {
   font-size: 16px;
   text-align: center;
   text-transform: uppercase;
+  min-width: 32px;
 }
 
 .stats-num-container .border {
@@ -2058,6 +2292,7 @@ h6 {
 
 .stats-num-container .discipline {
   display: flex;
+  justify-content: center;
   font-family: 'Overpass';
   font-style: normal;
   font-weight: 500;
@@ -2065,23 +2300,227 @@ h6 {
   color: #FFFFFF;
   align-items: center;
   text-transform: capitalize;
+  padding-top: 12px;
+  gap: 8px;
 }
 
-.club-link{
+
+.stats-num-container .discipline img {
+  max-height: 14px;
+}
+
+.club-link {
   display: flex;
   align-items: center;
   color: #FFFFFF;
-text-align: right;
+  justify-content: center;
+  text-align: right;
   font-family: 'Overpass';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
+  font-style: normal;
+  padding: 32px 0 24px 0;
+  font-weight: 700;
+  font-size: 14px;
 }
+
+.stats-club-name .stats-club-name-left img {
+  border: 8px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  max-height: 80px;
+
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .ranking h1 {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+
+  .bracket {
+    width: 15px;
+    height: 80px;
+  }
+
+  .team-wrapper {
+    width: 100%;
+  }
+
+  .team {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .team img {
+    max-height: 50px;
+  }
+
+  .team span {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+
+  .extra {
+    font-size: 12px;
+  }
+
+  .stats-player span {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+
+  .section-stats-card .section-stats-name {
+    padding: 48px 16px 16px 40px;
+    font-size: 18px;
+  }
+
+  .stats-bar-container-wrapper {
+    padding: 16px 16px 16px 32px;
+  }
+
+  .stats-club-name {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 40px 16px 40px 16px;
+  }
+
+  .stats-club-name-right p {
+    font-size: 16px;
+  }
+
+  .stats-num-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats-num-wrapper .stats-num-item p {
+    font-size: 10px;
+  }
+
+  .club-link {
+    font-size: 12px;
+    padding: 24px 0 16px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .ranking h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .team {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .team span {
+    font-size: 16px;
+  }
+
+  .stats-player span {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .section-stats-card .section-stats-name {
+    padding: 32px 8px 8px 24px;
+    font-size: 16px;
+  }
+
+  .stats-bar-container-wrapper {
+    padding: 12px 12px 12px 24px;
+  }
+
+  .stats-club-name {
+    padding: 32px 8px 32px 8px;
+  }
+
+  .stats-club-name-right p {
+    font-size: 14px;
+  }
+
+  .stats-num-container {
+    padding: 8px;
+  }
+
+  .stats-num-wrapper .stats-num-item p {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ranking h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .section-stats-container {
+    flex-wrap: wrap;
+
+  }
+
+  .stats-club-card-container {
+    flex-wrap: wrap;
+  }
+
+
+  .team {
+    flex-direction: row;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .team span {
+    font-size: 14px;
+  }
+
+  .stats-player span {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .section-stats-card .section-stats-name {
+    padding: 24px 8px 8px 16px;
+    font-size: 14px;
+  }
+
+  .stats-bar-container-wrapper {
+    padding: 8px;
+  }
+
+  .stats-club-name {
+    padding: 24px 8px;
+  }
+
+  .stats-club-name-right p {
+    font-size: 12px;
+  }
+
+  .stats-num-container {
+    padding: 4px;
+  }
+
+  .stats-num-wrapper .stats-num-item p {
+    font-size: 6px;
+  }
+
+  .club-link {
+    font-size: 10px;
+    padding: 16px 0 12px 0;
+  }
+}
+
+
 /*  Partners Section */
 
 .partners {
   background: #F7F7F7;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   text-align: center;
+  padding-top: 124px;
+  margin-top: -214px;
 }
 
 .partners-title {
@@ -2131,15 +2570,48 @@ font-size: 14px;
   height: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  /* Optional: grayscale effect */
   transition: filter 0.3s ease;
 }
 
 .logos-grid img:hover {
   filter: grayscale(0%);
-  /* Optional: color on hover */
+
 }
 
+/* For screens smaller than 768px (large phones) */
+@media (max-width: 768px) {
+  .partners-title {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .logos-grid img {
+    max-width: 80px;
+
+  }
+}
+
+/* For screens smaller than 480px (small phones) */
+@media (max-width: 480px) {
+  .partners-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .logos-grid {
+    gap: 10px;
+  }
+
+  .logos-grid img {
+    max-width: 60px;
+
+  }
+}
 
 /* Newsletter Section */
 
@@ -2188,7 +2660,6 @@ font-size: 14px;
   font-size: 42px;
   letter-spacing: 7px;
   text-transform: uppercase;
-  /* border-right: 2px solid #75D069; */
 
 }
 
@@ -2249,7 +2720,76 @@ font-size: 14px;
   cursor: pointer;
 }
 
+/* For screens smaller than 1024px (tablets and small desktops) */
+@media (max-width: 1024px) {
+  .overlay-wrapper {
+    padding-inline: 60px;
+  }
 
+  .overlay-item-left {
+    font-size: 36px;
+    letter-spacing: 5px;
+  }
+
+  .overlay-items {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .overlay-item-right {
+    font-size: 14px;
+  }
+}
+
+/* For screens smaller than 768px (large phones) */
+@media (max-width: 768px) {
+  .overlay-wrapper {
+    padding-inline: 30px;
+  }
+
+  .overlay-item-left {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .overlay-item-right {
+    font-size: 12px;
+  }
+
+  .form-group input {
+    padding: 8px;
+  }
+
+  .overlay-item-right button {
+    padding: 8px 16px;
+  }
+}
+
+/* For screens smaller than 480px (small phones) */
+@media (max-width: 480px) {
+  .overlay-wrapper {
+    padding-inline: 15px;
+  }
+
+  .overlay-item-left {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .overlay-items {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group input {
+    padding: 6px;
+  }
+
+  .overlay-item-right button {
+    padding: 6px 12px;
+  }
+}
 
 
 /* footer */
@@ -2372,4 +2912,94 @@ footer .footer-bottom {
   justify-content: space-between;
   padding: 24px 0;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+/* For screens smaller than 1024px (tablets and small desktops) */
+@media (max-width: 1024px) {
+  .footer-wrapper {
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .footer-column {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .footer-social {
+    justify-content: center;
+
+  }
+
+  footer .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* For screens smaller than 768px (large phones) */
+@media (max-width: 768px) {
+  .footer-column {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-social {
+    font-size: 24px;
+  }
+
+  footer .copyright-section {
+    gap: 8px;
+    text-align: center;
+
+  }
+
+
+}
+
+/* For screens smaller than 480px (small phones) */
+@media (max-width: 480px) {
+
+  .logo {
+    padding-block: 14px;
+  }
+
+  .footer-wrapper::before,
+  .footer-wrapper::after {
+    display: none;
+  }
+
+  footer .footer-bottom {
+    padding: 16px 0;
+    text-align: center;
+
+  }
+
+  footer .copyright-section {
+
+    flex-direction: column;
+  }
+
+  footer .copyright-section p {
+    border-right: none;
+  }
+
+  footer .copyright-section p:last-child {
+    border-bottom: 2px solid #75D069;
+    padding-bottom: 16px;
+  }
+
+
+  footer .copyright-section span {
+    text-align: left;
+  }
+
+  footer .copyright-section p {
+    text-align: left;
+  }
+
+  .footer-social {
+    font-size: 20px;
+
+  }
 }

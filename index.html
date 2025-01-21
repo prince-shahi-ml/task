@@ -30,9 +30,27 @@
         <div class="container">
             <div class="header">
                 <div class="logo">
-                    GO<span>BOTOLA</span>
+                    <svg width="47" height="25" viewBox="0 0 47 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M46.2755 12.3282C46.2755 18.8296 40.9809 24.1112 34.4925 24.1112C33.636 24.1112 32.7795 24.0203 31.9361 23.8387C29.0941 23.2288 26.6285 21.6196 25.0064 19.3227L24.9805 19.2838C24.7209 18.9204 21.1133 13.7556 21.1133 13.7556C21.1133 13.7556 17.4149 8.47407 17.2852 8.29239C16.3379 6.96875 14.9234 6.03442 13.3013 5.67106C12.8082 5.56725 12.3021 5.50236 11.796 5.50236C9.91432 5.50236 8.21435 6.268 6.98155 7.5008C5.73577 8.7336 4.97014 10.4336 4.97014 12.3152C4.97014 14.145 5.68386 15.8449 6.96857 17.1426C8.25328 18.4273 9.96623 19.141 11.783 19.141C13.483 19.141 15.0791 18.5441 16.26 17.493L14.1837 14.5343H10.3815V10.1221H16.4676L20.3347 15.6373L22.0866 18.1418L21.4637 19.0113L21.2301 19.3357C19.1019 22.3204 15.5593 24.1112 11.757 24.1112C8.60366 24.1112 5.65791 22.8784 3.42589 20.6593C1.21982 18.4273 0 15.4686 0 12.3152C0 9.16184 1.2328 6.20311 3.45184 3.98407C5.68386 1.76503 8.62961 0.532227 11.783 0.532227C12.6395 0.532227 13.5089 0.623065 14.3524 0.804741C17.1814 1.42763 19.6599 3.04974 21.321 5.38557C21.3729 5.46343 23.7606 8.86337 25.1751 10.8878C28.3025 15.3648 28.9254 16.2472 29.0682 16.4419C29.5224 17.0777 30.0933 17.6228 30.7552 18.051C31.417 18.4792 32.1696 18.7907 32.9872 18.9723C33.4803 19.0762 33.9864 19.1281 34.4925 19.1281C36.3741 19.1281 38.0741 18.3624 39.3069 17.1296C40.5397 15.8968 41.3053 14.1969 41.3053 12.3152C41.3053 10.4985 40.5916 8.78551 39.3069 7.48782C38.0222 6.20311 36.3092 5.48939 34.4925 5.48939C32.2994 5.48939 30.2361 6.52754 29.0033 8.26644L28.7048 8.68169L27.5628 10.2908L27.1995 10.8099L26.1094 9.25268L24.1759 6.48861L24.9675 5.38557C27.1216 2.36196 30.6903 0.545203 34.4925 0.545203C37.6459 0.545203 40.5916 1.77801 42.8236 3.99705C45.0427 6.21609 46.2755 9.17482 46.2755 12.3282Z"
+                            fill="#75D069" />
+                    </svg>
+
+                    <span>BOTOLA</span>
                 </div>
                 <nav class="nav">
+                    <a href="#">STATS</a>
+                    <a href="#">CALENDRIER</a>
+                    <a href="#">CLASSEMENT</a>
+                    <a href="#">CLUBS</a>
+                    <a href="#" class="cta-button">Recruter un Expert</a>
+                </nav>
+                <div class="nav-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="nav-responsive">
                     <a href="#">STATS</a>
                     <a href="#">CALENDRIER</a>
                     <a href="#">CLASSEMENT</a>
@@ -43,7 +61,7 @@
         </div>
     </header>
 
-    <section class="hero p__tb">
+    <section class="hero p__t">
         <div class="container">
             <div class="hero-container">
                 <div class="hero-left">
@@ -874,9 +892,65 @@
                 </div>
                 <div class="stats-club-card">
                     <div class="stats-club-name">
+                        <div class="stats-club-name-left">
+                            <img src="./Assets/image0.png" alt="">
+                        </div>
+                        <div class="stats-club-name-right">
+                            <p>difaâ hassani <br>el jadidi</p>
+                            <div class="name">
+                                <p>Entraineur</p>
+                                <p>Abdelhak Benchikha</p>
+                            </div>
+                        </div>
+                    </div>
 
-                        <img src="./Assets/image0.png" alt="">
+                    <div class="stats-num-container">
+                        <div class="stats-num-wrapper">
+                            <div class="stats-num-left">
+                                <div class="stats-num-item">
+                                    <p>45</p>
+                                    <p>Matchs joués</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>92</p>
+                                    <p>Buts</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>7</p>
+                                    <p>défaites</p>
+                                </div>
+                            </div>
 
+                            <div class="border"></div>
+                            <div class="stats-num-right">
+                                <div class="stats-num-item">
+                                    <p>29</p>
+                                    <p>victoires</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>9</p>
+                                    <p>Nuls</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>41</p>
+                                    <p>Buts concédés</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="border"></div>
+                        <div class="discipline">
+                            <p>Discipline</p>
+                            <img src="./Assets/Carton rouge.png" alt="">
+                            <img src="./Assets/Carton jaune.png" alt="">
+
+                        </div>
+                    </div>
+
+                    <div class="club-link">
+                        <p>Profil du club</p>
+                        <i class="fa-solid fa-arrow-right-long fa-lg" style="color: #ef0107;"></i>
 
                     </div>
 
@@ -884,9 +958,65 @@
                 </div>
                 <div class="stats-club-card">
                     <div class="stats-club-name">
+                        <div class="stats-club-name-left">
+                            <img src="./Assets/image0.png" alt="">
+                        </div>
+                        <div class="stats-club-name-right">
+                            <p>difaâ hassani <br>el jadidi</p>
+                            <div class="name">
+                                <p>Entraineur</p>
+                                <p>Abdelhak Benchikha</p>
+                            </div>
+                        </div>
+                    </div>
 
-                        <img src="./Assets/image0.png" alt="">
+                    <div class="stats-num-container">
+                        <div class="stats-num-wrapper">
+                            <div class="stats-num-left">
+                                <div class="stats-num-item">
+                                    <p>45</p>
+                                    <p>Matchs joués</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>92</p>
+                                    <p>Buts</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>7</p>
+                                    <p>défaites</p>
+                                </div>
+                            </div>
 
+                            <div class="border"></div>
+                            <div class="stats-num-right">
+                                <div class="stats-num-item">
+                                    <p>29</p>
+                                    <p>victoires</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>9</p>
+                                    <p>Nuls</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>41</p>
+                                    <p>Buts concédés</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="border"></div>
+                        <div class="discipline">
+                            <p>Discipline</p>
+                            <img src="./Assets/Carton rouge.png" alt="">
+                            <img src="./Assets/Carton jaune.png" alt="">
+
+                        </div>
+                    </div>
+
+                    <div class="club-link">
+                        <p>Profil du club</p>
+                        <i class="fa-solid fa-arrow-right-long fa-lg" style="color: #ef0107;"></i>
 
                     </div>
 
@@ -894,14 +1024,71 @@
                 </div>
                 <div class="stats-club-card">
                     <div class="stats-club-name">
+                        <div class="stats-club-name-left">
+                            <img src="./Assets/image0.png" alt="">
+                        </div>
+                        <div class="stats-club-name-right">
+                            <p>difaâ hassani <br>el jadidi</p>
+                            <div class="name">
+                                <p>Entraineur</p>
+                                <p>Abdelhak Benchikha</p>
+                            </div>
+                        </div>
+                    </div>
 
-                        <img src="./Assets/image0.png" alt="">
+                    <div class="stats-num-container">
+                        <div class="stats-num-wrapper">
+                            <div class="stats-num-left">
+                                <div class="stats-num-item">
+                                    <p>45</p>
+                                    <p>Matchs joués</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>92</p>
+                                    <p>Buts</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>7</p>
+                                    <p>défaites</p>
+                                </div>
+                            </div>
 
+                            <div class="border"></div>
+                            <div class="stats-num-right">
+                                <div class="stats-num-item">
+                                    <p>29</p>
+                                    <p>victoires</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>9</p>
+                                    <p>Nuls</p>
+                                </div>
+                                <div class="stats-num-item">
+                                    <p>41</p>
+                                    <p>Buts concédés</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="border"></div>
+                        <div class="discipline">
+                            <p>Discipline</p>
+                            <img src="./Assets/Carton rouge.png" alt="">
+                            <img src="./Assets/Carton jaune.png" alt="">
+
+                        </div>
+                    </div>
+
+                    <div class="club-link">
+                        <p>Profil du club</p>
+                        <i class="fa-solid fa-arrow-right-long fa-lg" style="color: #ef0107;"></i>
 
                     </div>
 
 
                 </div>
+
             </div>
 
 
@@ -1022,7 +1209,11 @@
                     <p>Faq</p>
                 </div>
                 <div class="logo">
-                    GO<span>BOTOLA</span>
+                    <svg width="47" height="25" viewBox="0 0 47 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M46.2755 12.3282C46.2755 18.8296 40.9809 24.1112 34.4925 24.1112C33.636 24.1112 32.7795 24.0203 31.9361 23.8387C29.0941 23.2288 26.6285 21.6196 25.0064 19.3227L24.9805 19.2838C24.7209 18.9204 21.1133 13.7556 21.1133 13.7556C21.1133 13.7556 17.4149 8.47407 17.2852 8.29239C16.3379 6.96875 14.9234 6.03442 13.3013 5.67106C12.8082 5.56725 12.3021 5.50236 11.796 5.50236C9.91432 5.50236 8.21435 6.268 6.98155 7.5008C5.73577 8.7336 4.97014 10.4336 4.97014 12.3152C4.97014 14.145 5.68386 15.8449 6.96857 17.1426C8.25328 18.4273 9.96623 19.141 11.783 19.141C13.483 19.141 15.0791 18.5441 16.26 17.493L14.1837 14.5343H10.3815V10.1221H16.4676L20.3347 15.6373L22.0866 18.1418L21.4637 19.0113L21.2301 19.3357C19.1019 22.3204 15.5593 24.1112 11.757 24.1112C8.60366 24.1112 5.65791 22.8784 3.42589 20.6593C1.21982 18.4273 0 15.4686 0 12.3152C0 9.16184 1.2328 6.20311 3.45184 3.98407C5.68386 1.76503 8.62961 0.532227 11.783 0.532227C12.6395 0.532227 13.5089 0.623065 14.3524 0.804741C17.1814 1.42763 19.6599 3.04974 21.321 5.38557C21.3729 5.46343 23.7606 8.86337 25.1751 10.8878C28.3025 15.3648 28.9254 16.2472 29.0682 16.4419C29.5224 17.0777 30.0933 17.6228 30.7552 18.051C31.417 18.4792 32.1696 18.7907 32.9872 18.9723C33.4803 19.0762 33.9864 19.1281 34.4925 19.1281C36.3741 19.1281 38.0741 18.3624 39.3069 17.1296C40.5397 15.8968 41.3053 14.1969 41.3053 12.3152C41.3053 10.4985 40.5916 8.78551 39.3069 7.48782C38.0222 6.20311 36.3092 5.48939 34.4925 5.48939C32.2994 5.48939 30.2361 6.52754 29.0033 8.26644L28.7048 8.68169L27.5628 10.2908L27.1995 10.8099L26.1094 9.25268L24.1759 6.48861L24.9675 5.38557C27.1216 2.36196 30.6903 0.545203 34.4925 0.545203C37.6459 0.545203 40.5916 1.77801 42.8236 3.99705C45.0427 6.21609 46.2755 9.17482 46.2755 12.3282Z"
+                            fill="#75D069" />
+                    </svg><span>BOTOLA</span>
                 </div>
 
             </div>

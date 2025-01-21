@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-responsive');
+  
+    toggleButton.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  });
+
+
 $('.match-schedule').owlCarousel({
     loop: true,
     margin: 10,
